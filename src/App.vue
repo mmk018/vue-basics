@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>To do APP</h1>
-    <TodoList v-bind="todos"></TodoList>
+    <TodoList v-bind:todos="todos"
+    @remove-todo="removeTodo"></TodoList>
   </div>
 </template>
 
@@ -14,12 +15,17 @@ export default {
       todos: [
         {id:1, title: 'buy bread', completed: false},
         {id:2, title: 'buy milk', completed: false},
-        {id:3, title: 'buy juice', completed: false},
+        {id:3, title: 'buy juice', completed: false}
       ]
     }
   },
   components: {
     TodoList
+  },
+  methods: {
+    removeTodo(id){
+      this.todos = this.todos.filter(t => t.id !== id)
+    }
   }
 }
 </script>
