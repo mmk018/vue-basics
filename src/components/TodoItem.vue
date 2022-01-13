@@ -34,10 +34,15 @@ li {
   margin-bottom: 1rem;
 }
 .rm {
-  background: red;
+  background: rgb(245, 111, 111);
   color: #fff;
   border-radius: 50%;
   font-weight: bold;
+  transition: all 0.5s;
+}
+.rm:hover {
+  background: rgb(255, 0, 0);
+  cursor: pointer;
 }
 .done {
   text-decoration: line-through;
